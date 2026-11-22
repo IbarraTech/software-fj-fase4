@@ -84,6 +84,11 @@ class Reserva(Entidad):  # Reserva hereda de la clase abstracta Entidad
         return self._estado  # Devuelve el estado
 
     @property
+    def desglose(self) -> dict | None:  # Lectura del desglose del cobro
+        """Copia del desglose (base, descuento, impuesto, total); None mientras no se procese."""
+        return dict(self._desglose) if self._desglose else None  # Copia para proteger el dato interno
+
+    @property
     def costo_total(self) -> float | None:  # Lectura del total cobrado
         """Total cobrado (None mientras no se procese)."""
         return self._desglose["total"] if self._desglose else None  # Total o None
