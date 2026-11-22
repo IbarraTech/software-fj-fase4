@@ -1,0 +1,105 @@
+2026-11-22 15:47:15 | INFO     | software_fj.main         | Inicio de la ejecución de simulaciones de Software FJ.
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Sistema de gestión Software FJ iniciado (almacenamiento en memoria, sin base de datos).
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 01: Registrar cliente válido (Ana María Gómez) =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Cliente registrado: Cliente CLI-001: Ana María Gómez | Doc: ******4050 | ana.gomez@correo.com | 3001234567
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 01 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 02: Registrar cliente válido (Luis Fernando Rojas, sin teléfono) =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Cliente registrado: Cliente CLI-002: Luis Fernando Rojas | Doc: ****6412 | luis.rojas@empresa.co | sin teléfono
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 02 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 03: Registrar cliente con correo inválido =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Registro de cliente rechazado -> [SFJ-101] Correo electrónico inválido: 'carlos.perez#correo'.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 03 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 04: Registrar cliente sin nombre (parámetro faltante) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Registro de cliente rechazado -> [SFJ-102] El campo 'nombre' del cliente no puede estar vacío.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 04 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 05: Registrar cliente con documento duplicado =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Registro de cliente rechazado -> [SFJ-104] Ya existe un cliente con el documento terminado en 4050.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 05 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 06: Crear servicio válido: sala de reuniones =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Servicio creado: [Sala] SRV-001 Sala Andes | 12 personas, con proyector | $45.000/h | Disponible
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 06 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 07: Crear servicio válido: alquiler de equipo (1 unidad) =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Servicio creado: [Equipo] SRV-002 Portátil de alto rendimiento (Portátil) | Unidades libres: 1/1 | $9.000/h + seguro 5% | Disponible
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 07 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 08: Crear servicio válido: asesoría especializada =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Servicio creado: [Asesoría] SRV-003 Asesoría en bases de datos | Bases de datos con Laura Méndez | $120.000/h | Disponible
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 08 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 09: Crear sala con tarifa negativa =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de servicio 'sala' rechazada -> [SFJ-103] El campo 'tarifa por hora' debe ser mayor que cero; se recibió -20000.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 09 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 10: Crear sala con capacidad no numérica (excepción encadenada) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de servicio 'sala' rechazada -> [SFJ-103] El campo 'capacidad' debe ser un número entero; se recibió 'veinte'. | Causa original: ValueError: could not convert string to float: 'veinte'
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 10 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 11: Crear asesoría sin consultor (parámetro faltante, excepción encadenada) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de servicio 'asesoria' rechazada -> [SFJ-102] Parámetros incompletos o incorrectos para crear un servicio de tipo 'asesoria'. | Causa original: TypeError: Asesoria.__init__() missing 1 required positional argument: 'consultor'
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 11 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 12: Crear servicio de un tipo inexistente =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de servicio 'catering' rechazada -> [SFJ-103] Tipo de servicio 'catering' no existe. Opciones: sala, equipo, asesoria.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 12 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 13: Reserva completa: Ana reserva la sala 3 h (IVA por defecto) =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Reserva creada: Reserva RES-001: Ana María Gómez -> Sala Andes (3 h) | Estado: Pendiente | Total: sin cobrar
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-001 confirmada (Sala Andes, 3 h).
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Iniciando procesamiento de la reserva RES-001.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-001 procesada. Total cobrado: $178.500.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Fin del procesamiento de RES-001. Estado actual: Procesada.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 13 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 14: Reserva completa: Luis toma asesoría 3 h con cupón FJ10 =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Reserva creada: Reserva RES-002: Luis Fernando Rojas -> Asesoría en bases de datos (3 h) | Estado: Pendiente | Total: sin cobrar
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-002 confirmada (Asesoría en bases de datos, 3 h).
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Iniciando procesamiento de la reserva RES-002.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-002 procesada. Total cobrado: $347.004.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Fin del procesamiento de RES-002. Estado actual: Procesada.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 14 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 15: Reservar la sala por 12 h (duración fuera de rango) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de reserva rechazada -> [SFJ-301] Duración de 12 h no permitida para Reserva de sala: debe estar entre 0.5 y 8 h.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 15 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 16: Reservar con un cliente no registrado =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Creación de reserva rechazada -> [SFJ-500] No existe un cliente registrado con el documento '99999999'.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 16 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 17: Ana alquila la única unidad del portátil por 4 h =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Reserva creada: Reserva RES-003: Ana María Gómez -> Portátil de alto rendimiento (4 h) | Estado: Pendiente | Total: sin cobrar
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-003 confirmada (Portátil de alto rendimiento, 4 h).
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 17 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 18: Luis intenta alquilar el portátil sin unidades libres (servicio no disponible) =====
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Reserva creada: Reserva RES-004: Luis Fernando Rojas -> Portátil de alto rendimiento (2 h) | Estado: Pendiente | Total: sin cobrar
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Confirmación de RES-004 rechazada -> [SFJ-301] No se pudo confirmar la reserva RES-004: el servicio no está disponible. | Causa original: ServicioNoDisponibleError: [SFJ-200] No quedan unidades disponibles de 'Portátil de alto rendimiento'.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 18 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 19: Reservar la sala mientras está en mantenimiento =====
+2026-11-22 15:47:15 | WARNING  | software_fj.gestor       | Servicio SRV-001 deshabilitado. Motivo: mantenimiento del aire acondicionado.
+2026-11-22 15:47:15 | INFO     | software_fj.gestor       | Reserva creada: Reserva RES-005: Luis Fernando Rojas -> Sala Andes (2 h) | Estado: Pendiente | Total: sin cobrar
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Confirmación de RES-005 rechazada -> [SFJ-301] No se pudo confirmar la reserva RES-005: el servicio no está disponible. | Causa original: ServicioNoDisponibleError: [SFJ-200] El servicio 'Sala Andes' no está disponible: mantenimiento del aire acondicionado.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-005 cancelada (antes: Pendiente). Motivo: servicio en mantenimiento.
+2026-11-22 15:47:15 | WARNING  | software_fj.gestor       | Servicio SRV-001 habilitado nuevamente.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 19 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 20: Procesar el alquiler de Ana con 80 % de descuento (cálculo inconsistente) =====
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Iniciando procesamiento de la reserva RES-003.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Fin del procesamiento de RES-003. Estado actual: Confirmada.
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Procesamiento de RES-003 rechazado -> [SFJ-300] No se pudo procesar la reserva RES-003: cálculo de costo inválido. | Causa original: CalculoInconsistenteError: [SFJ-400] Descuento de 80% fuera de rango: debe estar entre 0% y 50%.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 20 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 21: Ana cancela su alquiler confirmado (se libera la unidad) =====
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-003 cancelada (antes: Confirmada). Motivo: cambio de planes.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 21 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 22: Luis recupera su reserva pendiente: confirmar y procesar =====
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-004 confirmada (Portátil de alto rendimiento, 2 h).
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Iniciando procesamiento de la reserva RES-004.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Reserva RES-004 procesada. Total cobrado: $17.955.
+2026-11-22 15:47:15 | INFO     | software_fj.reserva      | Fin del procesamiento de RES-004. Estado actual: Procesada.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 22 (resultado: exito) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 23: Cancelar una reserva ya procesada (operación no permitida) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Cancelación de RES-001 rechazada -> [SFJ-302] No se puede cancelar la reserva RES-001: está en estado Procesada.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 23 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 24: Confirmar una reserva cancelada (operación no permitida) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.gestor       | Confirmación de RES-003 rechazada -> [SFJ-302] No se puede confirmar la reserva RES-003: está en estado Cancelada.
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 24 (resultado: rechazo) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Simulación 25: Generar un reporte con un dato inexistente (error de programación simulado) =====
+2026-11-22 15:47:15 | ERROR    | software_fj.main         | Error inesperado en la simulación 25
+Traceback (most recent call last):
+  File "C:\Archivos IA\software-fj\main.py", line 60, in ejecutar
+    realizada, detalle = operacion()  # Corre la simulación
+                         ~~~~~~~~~^^
+  File "C:\Archivos IA\software-fj\main.py", line 171, in reporte_externo
+    return True, f"Ingresos en dólares: {resumen['ingresos_usd']}"  # KeyError: la clave no existe
+                                         ~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'ingresos_usd'
+2026-11-22 15:47:15 | INFO     | software_fj.main         | ===== Fin de la simulación 25 (resultado: inesperado) =====
+2026-11-22 15:47:15 | INFO     | software_fj.main         | Fin de la ejecución. Simulaciones: 25 | Resultados: {'exito': 10, 'rechazo': 14, 'inesperado': 1}
